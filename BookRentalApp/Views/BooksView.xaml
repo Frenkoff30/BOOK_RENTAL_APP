@@ -24,7 +24,7 @@
                   HeadersVisibility="Column"
                   AlternatingRowBackground="#2d2d30"
                   BorderBrush="#3a3a3a"
-                  RowHeight="35" Margin="-10,2,10,-2">
+                  RowHeight="35" Margin="0,31,0,-31">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>

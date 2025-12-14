@@ -12,33 +12,26 @@ using BookRentalApp.Views;
 
 namespace BookRentalApp
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    
-    //Main okno aplikace kod pro navigaci
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-
-            MainContent.Content = new BooksView();
         }
 
-        private void BooksBtn_Click(object sender, RoutedEventArgs e)
+        private void Books_Click(object sender, RoutedEventArgs e)
         {
-            MainContent.Content = new BooksView();
+            ContentArea.Content = new BooksView();
         }
 
-        private void CustomersBtn_Click(object sender, RoutedEventArgs e)
+        private void Customers_Click(object sender, RoutedEventArgs e)
         {
-            MainContent.Content = new CustomersView();
+            ContentArea.Content = new CustomersView();
         }
 
-        private void LoansBtn_Click(object sender, RoutedEventArgs e)
+        private void Loans_Click(object sender, RoutedEventArgs e)
         {
-            MainContent.Content = new LoanView();
+            ContentArea.Content = new LoanView();
         }
     }
 }

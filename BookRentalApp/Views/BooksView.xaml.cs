@@ -11,11 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
 using BookRentalApp.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using System.Windows.Controls;
+
 
 namespace BookRentalApp.Views
 {

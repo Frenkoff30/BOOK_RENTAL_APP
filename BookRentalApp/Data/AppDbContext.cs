@@ -18,7 +18,8 @@ namespace BookRentalApp.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlite("Data Source=bookrental.db");
+            var dbPath = System.IO.Path.Combine(AppContext.BaseDirectory, "bookrental.db");
+            options.UseSqlite($"Data Source={dbPath}");
         }
     }
 }
