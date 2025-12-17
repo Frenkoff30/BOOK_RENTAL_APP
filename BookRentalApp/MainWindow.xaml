@@ -15,7 +15,7 @@
             <!-- Content -->
         </Grid.ColumnDefinitions>
 
-        <!-- 🔹 LEFT SIDEBAR -->
+        <!--LEFT SIDEBAR-->
         <StackPanel Background="#111111" Grid.Column="0"
                     Margin="20"
                     VerticalAlignment="Top">
@@ -43,7 +43,7 @@
                     Click="Loans_Click"/>
         </StackPanel>
 
-        <!-- 🔸 CONTENT REGION -->
+        <!--CONTENT REGION-->
         <ContentControl x:Name="ContentArea"
                         Grid.Column="1"
                         Margin="20"/>

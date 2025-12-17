@@ -10,47 +10,67 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Nadpis -->
+        <!--NADPIS-->
         <TextBlock Text="👤 Zákazníci"
                    FontSize="28"
                    FontWeight="Bold"
                    Foreground="White"
                    Margin="0 0 0 20"/>
 
-        <!-- Tlačítka -->
+        <!--TLAČÍTKA-->
         <StackPanel Orientation="Horizontal"
                     Grid.Row="1"
-                    Margin="0 0 0 20">
+                    Margin="0 10 0 20">
 
             <Button Content="➕ Přidat"
                     Width="150"
                     Margin="0 0 10 0"
+                    Style="{StaticResource NeonButton}"
                     Click="AddCustomer_Click"/>
 
             <Button Content="✏ Upravit"
                     Width="150"
                     Margin="0 0 10 0"
+                    Style="{StaticResource NeonButton}"
                     Click="EditCustomer_Click"/>
 
             <Button Content="🗑 Smazat"
                     Width="150"
+                    Style="{StaticResource NeonButton}"
                     Click="DeleteCustomer_Click"/>
         </StackPanel>
 
-        <!-- Tabulka zákazníků -->
+        <!--TABULKA ZÁKAZNÍKŮ-->
         <DataGrid x:Name="CustomersGrid"
                   Grid.Row="2"
                   AutoGenerateColumns="False"
                   Background="#111"
-                  Foreground="Black"
+                  Foreground="White"
+                  RowBackground="#1A1A1A"
+                  AlternatingRowBackground="#111"
+                  BorderBrush="#00FFFF"
+                  BorderThickness="1"
                   FontSize="16"
-                  HeadersVisibility="Column" SelectionChanged="CustomersGrid_SelectionChanged">
+                  HeadersVisibility="Column">
+
+            <!--TADY JE TEN FIX-->
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#111"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="BorderBrush" Value="#00FFFF"/>
+                    <Setter Property="BorderThickness" Value="0 0 0 1"/>
+                    <Setter Property="Padding" Value="10,5"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="60"/>
                 <DataGridTextColumn Header="Jméno" Binding="{Binding FirstName}" Width="150"/>
                 <DataGridTextColumn Header="Příjmení" Binding="{Binding LastName}" Width="150"/>
-                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="200"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="250"/>
                 <DataGridTextColumn Header="Telefon" Binding="{Binding Phone}" Width="150"/>
             </DataGrid.Columns>
 

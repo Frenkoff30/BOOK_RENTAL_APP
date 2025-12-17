@@ -20,7 +20,7 @@ namespace BookRentalApp.Views
             BooksGrid.ItemsSource = db.Books.ToList();
         }
 
-        // ➕ ADD
+        //ADD
         private void AddBook_Click(object sender, RoutedEventArgs e)
         {
             var dialog = new BookDialog
@@ -32,7 +32,7 @@ namespace BookRentalApp.Views
                 LoadBooks();
         }
 
-        // ✏ EDIT
+        //EDIT
         private void EditBook_Click(object sender, RoutedEventArgs e)
         {
             if (BooksGrid.SelectedItem is not Book book)
@@ -50,7 +50,7 @@ namespace BookRentalApp.Views
                 LoadBooks();
         }
 
-        // 🗑 DELETE
+        //DELETE
         private void DeleteBook_Click(object sender, RoutedEventArgs e)
         {
             if (BooksGrid.SelectedItem is not Book book)
@@ -74,7 +74,7 @@ namespace BookRentalApp.Views
             LoadBooks();
         }
 
-        // 📘 RENT
+        //RENT
         private void RentBook_Click(object sender, RoutedEventArgs e)
         {
             if (BooksGrid.SelectedItem is not Book book)

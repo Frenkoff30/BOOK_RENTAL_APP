@@ -31,7 +31,7 @@ namespace BookRentalApp.Views
 
             using var db = new AppDbContext();
 
-            // vytvoření půjčky
+            //vytvoření půjčky
             var loan = new Loan
             {
                 BookId = _book.Id,
@@ -41,7 +41,7 @@ namespace BookRentalApp.Views
 
             db.Loans.Add(loan);
 
-            // označení knihy jako půjčené
+            //označení knihy jako půjčené
             var book = db.Books.Find(_book.Id)!;
             book.IsAvailable = false;
 

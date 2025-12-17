@@ -8,13 +8,13 @@ namespace BookRentalApp.Views
     {
         private readonly Customer? _customer;
 
-        // ADD
+        //ADD
         public CustomerDialog()
         {
             InitializeComponent();
         }
 
-        // EDIT
+        //EDIT
         public CustomerDialog(Customer customer) : this()
         {
             _customer = customer;
@@ -38,7 +38,7 @@ namespace BookRentalApp.Views
 
             if (_customer == null)
             {
-                // ADD
+                //ADD
                 var customer = new Customer
                 {
                     FirstName = FirstNameBox.Text,
@@ -50,7 +50,7 @@ namespace BookRentalApp.Views
             }
             else
             {
-                // EDIT
+                //EDIT
                 var existing = db.Customers.Find(_customer.Id)!;
                 existing.FirstName = FirstNameBox.Text;
                 existing.LastName = LastNameBox.Text;

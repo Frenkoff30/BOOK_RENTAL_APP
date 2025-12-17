@@ -20,7 +20,7 @@ namespace BookRentalApp.Views
             CustomersGrid.ItemsSource = db.Customers.ToList();
         }
 
-        // ➕ ADD
+        //ADD
         private void AddCustomer_Click(object sender, RoutedEventArgs e)
         {
             var dialog = new CustomerDialog
@@ -34,7 +34,7 @@ namespace BookRentalApp.Views
             }
         }
 
-        // ✏ EDIT
+        //EDIT
         private void EditCustomer_Click(object sender, RoutedEventArgs e)
         {
             if (CustomersGrid.SelectedItem is not Customer customer)
@@ -54,7 +54,7 @@ namespace BookRentalApp.Views
             }
         }
 
-        // 🗑 DELETE
+        //DELETE
         private void DeleteCustomer_Click(object sender, RoutedEventArgs e)
         {
             if (CustomersGrid.SelectedItem is not Customer customer)

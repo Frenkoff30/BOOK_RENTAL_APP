@@ -4,16 +4,61 @@
              Background="#0A0A0A">
 
     <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--NADPIS + TLAČÍTKO-->
+        <StackPanel Orientation="Horizontal"
+                    Margin="0 0 0 20">
+
+            <TextBlock Text="📄 Půjčené knihy"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       VerticalAlignment="Center"/>
+
+            <Button Content="↩ Vrátit knihu"
+                    Width="200"
+                    Margin="30 0 0 0"
+                    Style="{StaticResource NeonButton}"
+                    Click="ReturnLoan_Click"/>
+        </StackPanel>
+
+        <!--TABULKA-->
         <DataGrid x:Name="LoansGrid"
+                  Grid.Row="1"
                   AutoGenerateColumns="False"
                   Background="#111"
                   Foreground="White"
-                  FontSize="16" SelectionChanged="LoansGrid_SelectionChanged">
+                  FontSize="16"
+                  SelectionChanged="LoansGrid_SelectionChanged">
 
+            <!--HLAVIČKA-->
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#0A0A0A"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="BorderBrush" Value="#00FFFF"/>
+                    <Setter Property="BorderThickness" Value="0 0 0 1"/>
+                    <Setter Property="Padding" Value="10"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+
+            <!--SLOUPCE-->
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Kniha" Binding="{Binding Book.Title}" Width="200"/>
-                <DataGridTextColumn Header="Zákazník" Binding="{Binding Customer.FullName}" Width="200"/>
-                <DataGridTextColumn Header="Datum půjčení" Binding="{Binding LoanDate}" Width="200"/>
+                <DataGridTextColumn Header="Kniha"
+                                    Binding="{Binding Book.Title}"
+                                    Width="200"/>
+                <DataGridTextColumn Header="Zákazník"
+                                    Binding="{Binding Customer.FullName}"
+                                    Width="200"/>
+                <DataGridTextColumn Header="Datum půjčení"
+                                    Binding="{Binding LoanDate}"
+                                    Width="200"/>
             </DataGrid.Columns>
 
         </DataGrid>

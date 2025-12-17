@@ -14,7 +14,7 @@ namespace BookRentalApp.Models
 
         public bool IsAvailable { get; set; } = true;
 
-        // navigační vlastnost
+        //navigační vlastnost
         public List<Loan> Loans { get; set; } = new();
     }
 }

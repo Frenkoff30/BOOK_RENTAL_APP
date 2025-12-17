@@ -10,7 +10,7 @@ namespace BookRentalApp.Data
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Loan> Loans { get; set; }
 
-        // 👇 TOHLE JE KLÍČOVÉ
+        
         public AppDbContext()
         {
             Database.EnsureCreated();

@@ -5,17 +5,17 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 
-        <!-- 🎨 Base Colors -->
+        <!--Base Colors-->
         <Color x:Key="PrimaryColor">#0A0A0A</Color>
         <Color x:Key="PrimaryLight">#1A1A1A</Color>
         <Color x:Key="AccentColor">#00E5FF</Color>
         <Color x:Key="AccentHover">#33F1FF</Color>
 
-        <!-- 📝 Text -->
+        <!--Text-->
         <SolidColorBrush x:Key="TextBrush" Color="White" />
         <SolidColorBrush x:Key="AccentBrush" Color="#00E5FF" />
 
-        <!-- 🔵 Neon Button Style -->
+        <!--Neon Button Style-->
         <Style x:Key="NeonButton" TargetType="Button">
             <Setter Property="Background" Value="#111111"/>
             <Setter Property="Foreground" Value="White"/>
@@ -58,7 +58,7 @@
             </Style.Triggers>
         </Style>
 
-        <!-- 🟣 DataGrid Dark Mode -->
+        <!--DataGrid Dark Mode-->
         <Style TargetType="DataGrid">
             <Setter Property="Background" Value="#111"/>
             <Setter Property="Foreground" Value="White"/>

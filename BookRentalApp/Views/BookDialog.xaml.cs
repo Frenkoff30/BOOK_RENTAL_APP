@@ -8,13 +8,13 @@ namespace BookRentalApp.Views
     {
         private readonly Book? _book;
 
-        // ADD
+        //ADD
         public BookDialog()
         {
             InitializeComponent();
         }
 
-        // EDIT
+        //EDIT
         public BookDialog(Book book) : this()
         {
             _book = book;
