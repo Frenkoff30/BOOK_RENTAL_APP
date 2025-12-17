@@ -1,27 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Linq;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Microsoft.EntityFrameworkCore;
+using BookRentalApp.Data;
 
 namespace BookRentalApp.Views
 {
-    /// <summary>
-    /// Interakční logika pro LoanView.xaml
-    /// </summary>
-    public partial class LoanView : Window
+    public partial class LoanView : UserControl
     {
         public LoanView()
         {
             InitializeComponent();
+            LoadLoans();
+        }
+
+        private void LoadLoans()
+        {
+            using var db = new AppDbContext();
+            LoansGrid.ItemsSource = db.Loans
+                .Include(l => l.Book)
+                .Include(l => l.Customer)
+                .ToList();
+        }
+
+        private void LoansGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

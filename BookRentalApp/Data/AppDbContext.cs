@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using BookRentalApp.Models;
-
 
 namespace BookRentalApp.Data
 {
-    //trida pro pristup nasich entit do databaze
+    // třída pro přístup k databázi
     public class AppDbContext : DbContext
     {
         public DbSet<Book> Books { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Loan> Loans { get; set; }
+
+        // 👇 TOHLE JE KLÍČOVÉ
+        public AppDbContext()
+        {
+            Database.EnsureCreated();
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
